@@ -1,3 +1,2 @@
 // Import Custom Typefaces
-import "typeface-montserrat";
-import "typeface-cardo";
+import "typeface-open-sans";

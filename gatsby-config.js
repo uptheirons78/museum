@@ -3,6 +3,21 @@ module.exports = {
     title: "Museo Civico di Nepi",
     description:
       "This repo contains an example of local museum website that is built with Gatsby, and Netlify CMS.It follows the JAMstack architecture by using Git as a single source of truth, and Netlify for continuous deployment, and CDN distribution.",
+    siteUrl: "https://museociviconepi.it/",
+    author: "Museo Civico di Nepi",
+    keywords: [
+      `comune di nepi`,
+      `nepi`,
+      `museo di nepi`,
+      `museo civico di nepi`,
+    ],
+    offices: {
+      indirizzo: "Via Falisca n. 26",
+      city: "Nepi",
+      cap: "01036",
+      telefono: "0761 570604",
+      email: "museo@comune.nepi.vt.it",
+    },
   },
   plugins: [
     "gatsby-plugin-netlify-cms",
