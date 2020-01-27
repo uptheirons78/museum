@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 
 const index = () => {
   return <div>Welcome from the Museum Website</div>;
