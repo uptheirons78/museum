@@ -50,7 +50,7 @@ const GlobalStyle = createGlobalStyle`
   .main-wrapper {
     max-width: 1052px;
     width: 100%;
-    border: 1px solid red;
+    /* border: 1px solid red; */
     margin: 0 auto;
     background-color: #FFFFFF;
   }
