@@ -20,7 +20,7 @@ const GlobalStyle = createGlobalStyle`
   }
   body {
     font-family: 'Open Sans', sans-serif;
-    background-color: #E3E3E3;
+    background-color: #393939;
   }
   h1,h2,h3,h4,h5,h6 {
     font-weight: 900;
