@@ -50,7 +50,7 @@ const StyledSkrewedSection = styled.section`
     height: 100%;
     background: #fff;
     display: flex;
-    justify-content: center;
+    justify-content: start;
     align-items: center;
     clip-path: ${props => props.polygon};
 
@@ -69,6 +69,7 @@ const StyledSkrewedSection = styled.section`
     .skrewed-section__content-title {
       color: #fff;
       text-transform: uppercase;
+      margin-left: 1rem;
     }
   }
 `;
