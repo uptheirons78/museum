@@ -3,17 +3,25 @@ import styled from "styled-components";
 
 const SkrewedSection = ({
   title,
+  content,
+  startingDate,
+  endingDate,
   bgColor,
   polygon,
   height,
   contentWidth,
   pseudoContentWidth,
   img,
+  skrewClass,
+  color,
 }) => {
+  const sliderClass = skrewClass === "slider" ? "slider" : "";
+  const collezioneClass = skrewClass === "collezione" ? "collezione" : "";
   return (
     <StyledSkrewedSection
-      className="skrewed-section"
+      className={`skrewed-section ${sliderClass} ${collezioneClass}`}
       bgColor={bgColor || "#B20932"}
+      color={color || "#FFF"}
       polygon={polygon || "polygon(0 0, 100% 0, 95% 100%, 0% 100%)"}
       height={height || "150px"}
       contentWidth={contentWidth || "400px"}
@@ -21,7 +29,13 @@ const SkrewedSection = ({
       img={img}
     >
       <div className="skrewed-section__content">
-        <h1 className="skrewed-section__content-title">{title}</h1>
+        {title && <h1 className="skrewed-section__content-title">{title}</h1>}
+        {content && <p className="skrewed-section__content-text">{content}</p>}
+        {startingDate && (
+          <p className="skrewed-section__content-date">
+            Dal {startingDate} al {endingDate}
+          </p>
+        )}
       </div>
     </StyledSkrewedSection>
   );
@@ -39,7 +53,17 @@ const StyledSkrewedSection = styled.section`
   background-position: center center;
 
   @media screen and (max-width: 600px) {
-    height: 75px;
+    height: 120px;
+  }
+
+  &.slider {
+    @media screen and (max-width: 600px) {
+      height: 220px;
+    }
+  }
+
+  &.collezione {
+    margin-top: 5px;
   }
 
   .skrewed-section__content {
@@ -50,9 +74,13 @@ const StyledSkrewedSection = styled.section`
     height: 100%;
     background: #fff;
     display: flex;
-    justify-content: start;
-    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
     clip-path: ${props => props.polygon};
+    @media screen and (max-width: 600px) {
+      width: 300px;
+    }
 
     &:before {
       content: "";
@@ -64,12 +92,42 @@ const StyledSkrewedSection = styled.section`
       background: ${props => props.bgColor};
       clip-path: ${props => props.polygon};
       z-index: -1;
+
+      @media screen and (max-width: 600px) {
+        width: 295px;
+      }
     }
 
     .skrewed-section__content-title {
-      color: #fff;
+      color: ${props => props.color};
       text-transform: uppercase;
       margin-left: 1rem;
+
+      @media screen and (max-width: 600px) {
+        font-size: 0.8rem;
+      }
+    }
+
+    .skrewed-section__content-date {
+      color: ${props => props.color};
+      opacity: 0.8;
+      margin-left: 1rem;
+      font-size: 0.8rem;
+
+      @media screen and (max-width: 600px) {
+        font-size: 0.6rem;
+      }
+    }
+
+    .skrewed-section__content-text {
+      color: ${props => props.color};
+      opacity: 0.8;
+      margin-left: 1rem;
+      font-size: 0.8rem;
+
+      @media screen and (max-width: 600px) {
+        font-size: 0.6rem;
+      }
     }
   }
 `;

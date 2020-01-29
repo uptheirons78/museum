@@ -20,7 +20,7 @@ const GlobalStyle = createGlobalStyle`
   }
   body {
     font-family: 'Open Sans', sans-serif;
-    background-color: #393939;
+    background-color: #363636;
   }
 
   h1,h2,h3,h4,h5,h6 {
@@ -59,6 +59,25 @@ const GlobalStyle = createGlobalStyle`
   .cookies-link {
     color: #FAA916 !important;
     transition: all .350s ease-in-out;
+  }
+
+  .slick-arrow {
+    display: none !important;
+  }
+
+  .slick-dots {
+    text-align: left !important;
+    bottom: 25px !important;
+    padding: 0.5rem;
+
+    li {
+      button {
+        &:before {
+          font-size: 8px !important;
+          color: #fff !important;
+        }
+      }
+    }
   }
 
 `;
