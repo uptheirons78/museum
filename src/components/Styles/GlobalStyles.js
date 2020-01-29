@@ -20,7 +20,7 @@ const GlobalStyle = createGlobalStyle`
   }
   body {
     font-family: 'Open Sans', sans-serif;
-    background-color: #363636;
+    /* background-color: #363636; */
   }
 
   h1,h2,h3,h4,h5,h6 {
@@ -49,6 +49,7 @@ const GlobalStyle = createGlobalStyle`
   }
 
   .main-wrapper {
+    box-shadow: 18px 0 22px -4px rgba(0, 0, 0, 0.6), -18px 0 22px -4px rgba(0, 0, 0, 0.6);
     max-width: 1052px;
     width: 100%;
     /* border: 1px solid red; */

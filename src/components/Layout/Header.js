@@ -22,8 +22,8 @@ const Header = () => {
         bgColor="#B20932"
         polygon="polygon(0 0, 100% 0, 95% 100%, 0% 100%)"
         height="180px"
-        contentWidth="400px"
-        pseudoContentWidth="395px"
+        contentWidth="420px"
+        pseudoContentWidth="415px"
         img={SkrewedImage}
       />
       <Navigation>
@@ -43,20 +43,20 @@ const Header = () => {
 export default Header;
 
 const Navigation = styled.nav`
+  background: #fff;
   ul {
     list-style-type: none;
     display: flex;
     justify-content: space-around;
-    padding: 1rem 0;
+    padding: 0.5rem 0;
 
     li {
       flex-grow: 1;
-      /* flex-basis: 0; */
       text-align: center;
       padding: 0.2rem 0;
 
       &:not(:first-child) {
-        border-left: 1px solid #ddd;
+        border-left: 1px solid #ccc;
       }
       a {
         color: #000;
@@ -72,6 +72,19 @@ const Navigation = styled.nav`
   }
 
   @media screen and (max-width: 600px) {
-    display: none;
+    li {
+      &:nth-child(1) {
+        display: none;
+      }
+      &:nth-child(2) {
+        display: none;
+      }
+      &:nth-child(3) {
+        display: none;
+      }
+      &:nth-child(4) {
+        display: none;
+      }
+    }
   }
 `;

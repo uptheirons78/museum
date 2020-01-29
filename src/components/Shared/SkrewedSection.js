@@ -30,7 +30,11 @@ const SkrewedSection = ({
     >
       <div className="skrewed-section__content">
         {title && <h1 className="skrewed-section__content-title">{title}</h1>}
-        {content && <p className="skrewed-section__content-text">{content}</p>}
+        {content && (
+          <div className="skrewed-section__content-text-container">
+            <p className="skrewed-section__content-text">{content}</p>
+          </div>
+        )}
         {startingDate && (
           <p className="skrewed-section__content-date">
             Dal {startingDate} al {endingDate}
@@ -119,14 +123,17 @@ const StyledSkrewedSection = styled.section`
       }
     }
 
-    .skrewed-section__content-text {
-      color: ${props => props.color};
-      opacity: 0.8;
-      margin-left: 1rem;
-      font-size: 0.8rem;
+    .skrewed-section__content-text-container {
+      width: 70%;
+      .skrewed-section__content-text {
+        color: ${props => props.color};
+        opacity: 0.8;
+        margin-left: 1rem;
+        font-size: 0.8rem;
 
-      @media screen and (max-width: 600px) {
-        font-size: 0.6rem;
+        @media screen and (max-width: 600px) {
+          font-size: 0.6rem;
+        }
       }
     }
   }

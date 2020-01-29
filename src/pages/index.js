@@ -5,6 +5,8 @@ import styled from "styled-components";
 import Layout from "../components/Layout/Layout";
 import SEO from "../components/Seo";
 import SkrewedSection from "../components/Shared/SkrewedSection";
+import Title from "../components/Shared/Title";
+import Mosaic from "../components/Shared/Mosaic";
 
 // Fake Data
 import { projects } from "../utils/fakeprojects";
@@ -44,11 +46,12 @@ const index = () => {
           </SliderWrapper>
         ))}
       </Slider>
+      <Title title="Biglietti ed informazioni" />
       <SkrewedSection
         title="MIC Card"
         content="Musei Civici ad ingresso libero, mostre ed eventi speciali"
         bgColor="#e3e3e3"
-        polygon="polygon(0 0, 100% 0, 95% 100%, 0% 100%)"
+        polygon="polygon(0 0, 100% 0, 97% 100%, 0% 100%)"
         height="180px"
         contentWidth="500px"
         pseudoContentWidth="495px"
@@ -58,14 +61,16 @@ const index = () => {
       <SkrewedSection
         title="La Collezione"
         bgColor="#e3e3e3"
-        polygon="polygon(0 0, 92% 0, 100% 100%, 0% 100%)"
-        height="250px"
-        contentWidth="450px"
-        pseudoContentWidth="445px"
+        polygon="polygon(0 0, 96% 0, 100% 100%, 0% 100%)"
+        height="180px"
+        contentWidth="510px"
+        pseudoContentWidth="505px"
         img={collezioneImage}
         color="#000"
         skrewClass="collezione"
       />
+      <Title title="Cosa Vedere a Nepi" />
+      <Mosaic />
     </Layout>
   );
 };
