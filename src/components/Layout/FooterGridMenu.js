@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 
-const FooterMenu = () => {
+const FooterGridMenu = () => {
   const museoLinks = ["Presentazione", "Collezione", "Staff"];
   const infoLinks = [
     "Contatti",
@@ -19,8 +19,8 @@ const FooterMenu = () => {
     "Credits",
   ];
   return (
-    <StyledFooterMenu>
-      <div className="footer-menu__container one">
+    <StyledFooterGridMenu className="footer-grid-menu">
+      <div className="footer-grid-menu__item one">
         <h1>museo</h1>
         <ul className="footer-nav">
           {museoLinks.map(link => (
@@ -30,7 +30,7 @@ const FooterMenu = () => {
           ))}
         </ul>
       </div>
-      <div className="footer-menu__container two">
+      <div className="footer-grid-menu__item two">
         <h1>info</h1>
         <ul className="footer-nav">
           {infoLinks.map(link => (
@@ -40,7 +40,7 @@ const FooterMenu = () => {
           ))}
         </ul>
       </div>
-      <div className="footer-menu__container three">
+      <div className="footer-grid-menu__item three">
         <h1>eventi</h1>
         <ul className="footer-nav">
           {eventiLinks.map(link => (
@@ -50,7 +50,7 @@ const FooterMenu = () => {
           ))}
         </ul>
       </div>
-      <div className="footer-menu__container four">
+      <div className="footer-grid-menu__item four">
         <h1>sito e privacy</h1>
         <ul className="footer-nav">
           {siteLinks.map(link => (
@@ -60,24 +60,21 @@ const FooterMenu = () => {
           ))}
         </ul>
       </div>
-    </StyledFooterMenu>
+    </StyledFooterGridMenu>
   );
 };
 
-export default FooterMenu;
+export default FooterGridMenu;
 
-const StyledFooterMenu = styled.section`
-  padding-top: 1rem;
-  padding-bottom: 2rem;
+const StyledFooterGridMenu = styled.section`
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  .footer-menu__container {
-    padding-right: 1rem;
-    padding-left: 1rem;
-    &:not(:first-child) {
-      border-left: 1px solid #fff;
-    }
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  padding-top: 1rem;
 
+  .footer-grid-menu__item {
+    padding: 0.5rem;
     h1 {
       color: #fff;
       font-size: 0.9rem;
@@ -85,13 +82,6 @@ const StyledFooterMenu = styled.section`
       text-transform: uppercase;
       margin-bottom: 0.5rem;
     }
-    p {
-      color: #fff;
-      font-size: 0.8rem;
-      text-align: justify;
-      margin-top: 0.7rem;
-    }
-
     .footer-nav {
       list-style-type: none;
       a {
@@ -101,6 +91,27 @@ const StyledFooterMenu = styled.section`
         display: block;
         margin-bottom: 0.1rem;
       }
+    }
+  }
+
+  .one,
+  .two,
+  .three,
+  .four {
+    grid-column: span 1;
+  }
+
+  .two,
+  .three,
+  .four {
+    border-left: 1px solid #fff;
+  }
+
+  @media screen and (max-width: 600px) {
+    grid-template-columns: repeat(2, 1fr);
+
+    .three {
+      border: none;
     }
   }
 `;

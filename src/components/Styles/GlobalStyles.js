@@ -22,6 +22,7 @@ const GlobalStyle = createGlobalStyle`
     font-family: 'Open Sans', sans-serif;
     background-color: #393939;
   }
+
   h1,h2,h3,h4,h5,h6 {
     font-weight: 900;
     letter-spacing: 1px;

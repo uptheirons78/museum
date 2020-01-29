@@ -21,9 +21,11 @@ const Credits = () => {
       <div className="right">
         <p className="credits__text">
           Museo Civico di Nepi, Via Falisca 26 - 01036 Nepi(VT) - Tel.
-          0761570664 - Email: museo@comune.nepi.vt.it
+          0761570664
         </p>
-        <p className="credits__text">&copy; {year} Comune di Nepi</p>
+        <p className="credits__text">
+          &copy; {year} Comune di Nepi - Email: museo@comune.nepi.vt.it
+        </p>
       </div>
     </StyledCredits>
   );
@@ -32,6 +34,7 @@ const Credits = () => {
 export default Credits;
 
 const StyledCredits = styled.section`
+  margin-top: 1rem;
   padding: 1rem;
   display: flex;
   justify-content: space-between;
@@ -48,13 +51,23 @@ const StyledCredits = styled.section`
   }
   .credits__text {
     margin-top: -5px;
-    font-size: 0.8rem;
+    font-size: 0.7rem;
     color: #fff;
-    line-height: 1.7;
+    line-height: 2;
 
     a {
-      font-size: 0.8rem;
+      font-size: 0.7rem;
       color: #fff;
+    }
+  }
+
+  @media screen and (max-width: 800px) {
+    flex-direction: column;
+    align-items: flex-start;
+
+    .right {
+      text-align: left;
+      margin-top: 0.5rem;
     }
   }
 `;
